@@ -1,0 +1,19 @@
+{%  extends 'StudentInfo/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Query Student Information</h1>
+    <ul>
+        <form method = "get" action="/data-search/">
+            {% csrf_token %}
+            {{form.as_p}}
+       </form>
+       <h1>{{ text }}</h1>
+       {% for datastudent in StudentData %}
+        <h1>{{ datastudent.firstname}}</h1>
+        <h2>{{ datastudent.lastname }}</h2>
+        <h3>{{ datastudent.wid }}</h3>
+        <h4>{{ datastudent.courses }}</h4>
+       {% endfor %}
+    </ul>
+{% endblock %}

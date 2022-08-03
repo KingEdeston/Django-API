@@ -1,0 +1,15 @@
+{%  extends 'StudentInfo/base.html' %}
+
+{% block content %}
+Query Student Information
+<p></p>
+<form method = "get" action="/data-search/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type = "submit", name = "save">Search</button>
+</form>
+
+
+{% endblock %}
+
+

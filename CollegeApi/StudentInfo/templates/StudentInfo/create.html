@@ -1,0 +1,14 @@
+{%  extends 'StudentInfo/base.html' %}
+
+{% block title %} Create New List {% endblock %}
+
+{% block content %}
+Student Information
+<p></p>
+<form method = "post" action="/data-create/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type = "submit", name = "save">Submit</button>
+</form>
+{% endblock %}
+
